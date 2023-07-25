@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { LoginPageComponent } from './login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginNavbarComponent } from './login-navbar/login-navbar.component';
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     LoginFormComponent,
   ],
   imports: [
-    CommonModule, FormsModule
+    CommonModule, FormsModule,RouterModule
   ],
   exports: [
     LoginPageComponent

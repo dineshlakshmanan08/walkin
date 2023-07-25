@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 
 import { LoginPageModule } from './login-page/login-page.module';
 import { FormsModule } from '@angular/forms';
+
+import { UserRegistrationModule } from './user-registration/user-registration.module';
+
 @NgModule({
   declarations: [
     AppComponent,
 
+    
        
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginPageModule,
-   FormsModule
+   FormsModule,
+   UserRegistrationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
