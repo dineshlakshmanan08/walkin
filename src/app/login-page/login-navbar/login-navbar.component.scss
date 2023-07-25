@@ -1,0 +1,18 @@
+.logo-img {
+    position: relative;
+    background-image: url('../../../assets/png/headerpattern.png');
+    min-height: 56px;
+    border-bottom: 2px solid #31B9E4;
+    background-color: black;
+}
+
+.title {
+    position: absolute;
+    background-image: url('../../../assets/svg/logoheader.svg');
+    min-width: 134px;
+    min-height: 36px;
+    max-width: 134px;
+    max-height: 36px;
+    top: 10px;
+    left: 28px;
+}
