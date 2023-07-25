@@ -1,41 +1,46 @@
 <div class="outerContainerBg">
-    <div class="form">
+
+    <div class="forms">
+
         <div>
             <h1 class="txt-center log-in">Log in</h1>
         </div>
-        <div class="email">
-            <input type="email" required placeholder="EMAIL ID*">
-        </div>
-        <div class="email-label">
-            <label for="email">FORGOT EMAIL ID?</label>
-        </div>
-        <div class="password">
-            <input type="password" required placeholder="PASSWORD*">
-        </div>
-        <div class="password-label">
-            <label for="PASSWORD*">FORGOT PASSWORD?</label>
-        </div>
-        <div class="remember-me">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="email ">
+                <input type="email" required placeholder="EMAIL ID*" name="email" email ngModel>
+            </div>
+            <div class="email-label">
+                <label for="email">FORGOT EMAIL ID?</label>
+            </div>
+            <div class="password">
+                <input type="password" required placeholder="PASSWORD*" name="password" ngModel>
+            </div>
+            <div class="password-label">
+                <label for="PASSWORD* ">FORGOT PASSWORD?</label>
+            </div>
+            <div class="remember-me">
 
-            <label for="remember-me" (click)="toggleCheckbox()" class="remember-me-label">
-                <input type="checkbox" required  [(ngModel)]="isChecked">
-                  <img [src]="isChecked ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg'" alt="Checkbox Image" class="checkboxPosition">
+                <label for="remember-me" (click)="toggleCheckbox() " class="remember-me-label">
+                <input type="checkbox"  [(ngModel)]="isChecked" name="checkbox">
+                  <img [src]="isChecked ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
                 Remember Me</label>
 
+            </div>
+
+            <div class="login">
+                <button class="btn-login " type="submit">LOG IN</button>
+            </div>
+        </form>
+        <div>
+            <h6 class="txt-center not-registered ">Not registered yet?</h6>
+        </div>
+        <div class="txt-center create-account ">
+            <a href="# ">CREATE AN ACCOUNT</a>
         </div>
 
-        <div class="login">
-            <button class="btn-login">LOG IN</button>
-        </div>
-        <div>
-            <h6 class="txt-center not-registered">Not registered yet?</h6>
-        </div>
-        <div class="txt-center create-account">
-            <a href="#">CREATE AN ACCOUNT</a>
-        </div>
     </div>
-    <div class="footer-menu">
-        <a href="" class="about-link">About</a>
-        <a href="">Contact Us</a>
+    <div class="footer-menu ">
+        <a href=" " class="about-link ">About</a>
+        <a href=" ">Contact Us</a>
     </div>
 </div>

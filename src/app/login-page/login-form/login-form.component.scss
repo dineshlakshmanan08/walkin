@@ -10,7 +10,7 @@
 
 $txt-color:#1F7A54;
 $btn-color:#3FD28B;
-.form {
+.forms {
     background-color: #FFFFFF;
     border-top: 2px solid #3AC7EC;
     min-width: 440px;
@@ -31,6 +31,7 @@ $btn-color:#3FD28B;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .txt-center {
