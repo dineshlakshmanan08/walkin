@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "QuicksandB";
+    src: url("../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+}
+
+@font-face {
+    font-family: "QuicksandM";
+    src: url("../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+}
+
 $txt-color:#1F7A54;
 $btn-color:#3FD28B;
 .form {
@@ -7,6 +17,12 @@ $btn-color:#3FD28B;
     max-height: 419px;
     padding: 20px;
     margin-top: 120px;
+}
+
+.log-in {
+    font-family: "QuicksandM";
+    font-size: 24px;
+    color: #222222;
 }
 
 .outerContainerBg {
@@ -63,10 +79,19 @@ input[type="password"]:focus {
     background-color: transparent;
 }
 
+ ::-ms-reveal {
+    background-image: url("../../../assets/svg/preview.svg");
+}
+
 .email-label {
     text-align: right;
     margin-top: 5px;
     color: $txt-color;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    label {
+        cursor: pointer;
+    }
 }
 
 .email {
@@ -77,10 +102,22 @@ input[type="password"]:focus {
     text-align: right;
     margin-top: 5px;
     color: $txt-color;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    label {
+        cursor: pointer;
+    }
 }
 
 .remember-me {
     margin-top: 24px;
+}
+
+.remember-me-label {
+    margin-top: 24px;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .login {
@@ -97,6 +134,9 @@ input[type="password"]:focus {
     box-shadow: 0px 3px 5px #0000003D;
     opacity: 1;
     border: 0px;
+    cursor: pointer;
+    font-family: "QuicksandM";
+    font-size: 14px;
 }
 
 [type="checkbox"] {
@@ -109,11 +149,15 @@ input[type="password"]:focus {
     a {
         text-decoration: none;
         color: $txt-color;
+        font-family: "QuicksandM";
+        font-size: 14px;
     }
 }
 
 .not-registered {
     margin-bottom: 2px;
+    font-family: "QuicksandM";
+    font-size: 12px;
 }
 
 .footer-menu {
@@ -122,14 +166,24 @@ input[type="password"]:focus {
         text-decoration: none;
         color: $txt-color;
         padding: 0px 8px;
+        font-family: "QuicksandM";
+        font-size: 14px;
     }
     .about-link {
-        border-right: 2px solid black;
+        border-right: 2px solid #0000001F;
     }
 }
 
-// input {
-//     outline: none;
-//     border: none;
-//     background-color: transparent;
-// }
+.rememberPassword {
+    padding: 0;
+    margin: 0;
+    margin-top: 24px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.checkboxPosition {
+    vertical-align: middle;
+}

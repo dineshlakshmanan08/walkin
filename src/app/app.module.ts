@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginPageModule } from './login-page/login-page.module';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +16,7 @@ import { LoginPageModule } from './login-page/login-page.module';
     BrowserModule,
     AppRoutingModule,
     LoginPageModule,
+   FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginNavbarComponent } from './login-navbar/login-navbar.component';
-
+import { FormsModule } from '@angular/forms'; 
 @NgModule({
   declarations: [
     LoginNavbarComponent,
@@ -12,7 +12,7 @@ import { LoginNavbarComponent } from './login-navbar/login-navbar.component';
     LoginFormComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule, FormsModule
   ],
   exports: [
     LoginPageComponent

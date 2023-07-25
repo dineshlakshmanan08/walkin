@@ -1,7 +1,7 @@
 <div class="outerContainerBg">
     <div class="form">
         <div>
-            <h1 class="txt-center">Log in</h1>
+            <h1 class="txt-center log-in">Log in</h1>
         </div>
         <div class="email">
             <input type="email" required placeholder="EMAIL ID*">
@@ -15,18 +15,23 @@
         <div class="password-label">
             <label for="PASSWORD*">FORGOT PASSWORD?</label>
         </div>
-        <div class="remember-me"> <input type="checkbox">
-            <label for="remember-me">Remember Me</label>
+        <div class="remember-me">
+
+            <label for="remember-me" (click)="toggleCheckbox()" class="remember-me-label">
+                <input type="checkbox" required  [(ngModel)]="isChecked">
+                  <img [src]="isChecked ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg'" alt="Checkbox Image" class="checkboxPosition">
+                Remember Me</label>
+
         </div>
 
         <div class="login">
             <button class="btn-login">LOG IN</button>
         </div>
         <div>
-            <h3 class="txt-center not-registered">Not registered yet?</h3>
+            <h6 class="txt-center not-registered">Not registered yet?</h6>
         </div>
         <div class="txt-center create-account">
-            <a href="#">Create an account</a>
+            <a href="#">CREATE AN ACCOUNT</a>
         </div>
     </div>
     <div class="footer-menu">
