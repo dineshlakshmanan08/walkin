@@ -7,8 +7,8 @@ import { RegistrationProgressbarComponent } from './registration-progressbar/reg
 import { PersonalinfoFormComponent } from './personalinfo-form/personalinfo-form.component';
 import { QualificationFormComponent } from './qualification-form/qualification-form.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
-
-
+import { FormsModule } from '@angular/forms'; 
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [ UserRegistrationComponent,
     RegistrationNavbarComponent,
@@ -18,11 +18,11 @@ import { ReviewFormComponent } from './review-form/review-form.component';
     QualificationFormComponent,
     ReviewFormComponent,],
   imports: [
-    CommonModule,
+    CommonModule, FormsModule,RouterModule
    
   ],
   exports: [
-   UserRegistrationComponent
+   UserRegistrationComponent,QualificationFormComponent,PersonalinfoFormComponent,ReviewFormComponent
   ]
 })
 export class UserRegistrationModule { }

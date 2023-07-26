@@ -1,1 +1,55 @@
-<p>personalinfo-form works!</p>
+<div class="forms">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="first-name">
+            <label for="first-name">first-name</label>
+            <input type="text" name="first-name" id="" class="first-name-input" required ngModel>
+
+        </div>
+        <div class="profile-pic">
+            <input type="file" name="profile-pic" id="" class="profile-pic-input" ngModel>
+
+        </div>
+        <div class="last-name">
+            <label for="last-name">last-name</label>
+            <input type="text" name="last-name" id="" class="last-name-input" required ngModel>
+
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="" class="email-input" email required ngModel>
+
+        </div>
+        <div class="phone">
+            <label for="number">Number</label>
+            <input type="number" name="number" id="" class="number-input" required ngModel>
+
+        </div>
+        <div class="resume">
+            <input type="file" name="resume" id="" class="resume-input" ngModel>
+
+        </div>
+        <div class="portfolio">
+            <label for="portfolio">portfolio link</label>
+            <input type="text" name="portfolio" id="" class="portfolio-input" required ngModel>
+
+        </div>
+        <div class="preferred-roles">
+
+            <p>Please select your preferred-roles:</p>
+            <input type="checkbox" name="instructional_designer" value="instructional_designer" ngModel>   <label for="instructional_designer">instructional designer</label>   <input type="checkbox" name="software_engineer" value="software_engineer" ngModel>
+            <label for="software_engineer">software engineer</label>  <input type="checkbox" name="software_quality_engineer" value="software_quality_engineer" ngModel>   <label for="software_quality_engineer">software quality engineer</label>
+
+        </div>
+        <div class="referral">
+            <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
+            <input type="text" name="referral" id="" class="referral-input" ngModel>
+
+        </div>
+        <div class="job-updates">
+
+            <input type="checkbox" name="job_updates" value="job_updates" ngModel>   <label for="job_updates">job updates</label>
+
+        </div>
+        <button type="submit">Next</button>
+    </form>
+</div>
