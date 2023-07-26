@@ -1,0 +1,19 @@
+.logo-img {
+    position: relative;
+    background-image: url('../../../assets/png/headerpattern.png');
+    min-height: 56px;
+    border-bottom: 2px solid #31B9E4;
+    background-color: black;
+}
+
+.title {
+    position: absolute;
+    background-image: url('../../../assets/svg/Zeus-LMS-logo.svg');
+    background-repeat: no-repeat;
+    min-width: 127px;
+    min-height: 36px;
+    max-width: 127px;
+    max-height: 36px;
+    top: 9px;
+    left: 24px;
+}
