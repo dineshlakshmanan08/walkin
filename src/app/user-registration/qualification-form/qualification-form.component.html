@@ -1,1 +1,208 @@
-<p>qualification-form works!</p>
+<div class="outereducationalform">
+    <div><span>Educational Qualification</span><button type="click" (click)="toggleForm()">arrow</button></div>
+    <div *ngIf="!toggleCheck">
+        <form class="educationalform" (ngSubmit)="onSubmit(g)" #g="ngForm">
+
+            <div class="aggregate">
+                <label for="aggregate">aggregate</label>
+                <input type="number" name="aggregate" id="" class="aggregate-input" required ngModel min="35" max="100">
+
+            </div>
+            <div class="passingyear">
+                <label for="passingyear" class="">passingyear</label>
+                <input list="passingyear" id="browser" class="passingyear-input" required ngModel name="passingyear" />
+                <datalist id="passingyear">
+                <option value="2019"></option>
+                <option value="2020"></option>
+                <option value="2021"></option>
+                <option value="2022"></option>
+                <option value="2023"></option>
+              </datalist>
+
+            </div>
+            <div class="qualification">
+                <label for="qualification" class="">Qualification</label
+              >
+              <input list="qualification" id="browser" class="qualification-input" required ngModel name="qualification"/>
+              <datalist id="qualification">
+                <option value="BE"></option>
+                <option value="BSC"></option>
+                <option value="BTECH"></option>
+                <option value="MTECH"></option>
+                <option value="MSC"></option>
+              </datalist>
+
+            </div>
+            <div class="stream">
+                <label for="stream" class="">stream</label
+              >
+              <input list="stream" id="browser" class="stream-input" required ngModel name="stream"/>
+              <datalist id="stream">
+                <option value="CSE"></option>
+                <option value="MECHANICAL"></option>
+                <option value="IT"></option>
+                <option value="EXTC"></option>
+                <option value="ELECTRICAL"></option>
+              </datalist>
+
+            </div>
+            <div class="college">
+                <label for="college" class="">college</label
+              >
+              <input list="college" id="browser" class="college-input" required ngModel name="college"onchange="changeTech()"/>
+              <datalist id="college">
+                <option value="VCET"></option>
+                <option value="TSEC"></option>
+                <option value="IIT"></option>
+                <option value="VJTI"></option>
+                <option value="Others"></option>
+              </datalist>
+
+            </div>
+            <div class="other-college">
+                <label for="other-college">Other college</label>
+                <input type="text" name="othercollege" id="" class="other-college-input" ngModel>
+
+            </div>
+            <div class="location">
+                <label for="location">location</label>
+                <input type="text" name="location" id="" class="location-input" ngModel>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="outer-professional-form">
+    <div><span>Professional Qualification</span><button type="click" (click)="toggleForm2()">arrow</button></div>
+    <div *ngIf="!toggleCheck2">
+        <div>
+            <input type="radio" name="exp" value="fresher" (change)="onRadioChange($event)" [checked]="selectedOption === 'fresher'">
+            <label>fresher</label>
+        </div>
+        <div>
+            <input type="radio" name="exp" value="experience" (change)="onRadioChange($event)" [checked]="selectedOption === 'experience'">
+            <label>experience</label>
+        </div>
+        <div [ngSwitch]="selectedOption">
+            <div *ngSwitchCase="'fresher'">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="familiar-tech">
+
+                        <p>Please select all tech you are familiar in:</p>
+                        <input type="checkbox" name="Javascript" value="javascript" ngModel>   <label for="javascript"> javascript</label>   <input type="checkbox" name="Angular" value="Angular" ngModel>
+                        <label for="Angular">Angular</label>  <input type="checkbox" name="React" value="React" ngModel>   <label for="React">React</label>
+                        <input type="checkbox" name="Nodejs" value="Nodejs" ngModel> <label for="Nodejs">Nodejs</label>
+                        <input type="checkbox" name="Others" value="Others" ngModel>   <label for="Others">Others</label>
+
+                    </div>
+
+
+                    <div class="othertech">
+                        <label for="othertech">If selected other tech then mention</label>
+                        <input type="text" name="othertech" id="" class="other-tech-input" ngModel>
+
+                    </div>
+                    <p>Have you applied before?</p>
+                    <div>
+                        <input type="radio" name="bgcheck" value="yes">
+                        <label>Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="bgcheck" value="no">
+                        <label>No</label>
+                    </div>
+                    <div class="other-tech">
+                        <label for="other-tech">If Yes which role</label>
+                        <input type="text" name="role" id="" class="role-input" ngModel>
+
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div *ngSwitchCase="'experience'">
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="yoe">
+                        <label for="yoe">YEAR OF EXPERIENCE</label>
+                        <input type="number" name="yoe" id="" class="yoe-input" required ngModel>
+
+                    </div>
+                    <div class="CTC">
+                        <label for="CTC">CTC</label>
+                        <input type="number" name="ctc" id="" class="CTC-input" required ngModel>
+
+                    </div>
+                    <div class="phone">
+                        <label for="number">Number</label>
+                        <input type="number" name="pnumber" id="" class="number-input" required ngModel>
+
+                    </div>
+                    <div class="familiar-teche">
+
+                        <p>Please select all tech you have expertise in:</p>
+                        <input type="checkbox" name="Javascripte" value="javascript" ngModel>   <label for="javascript"> javascript</label>   <input type="checkbox" name="Angulare" value="Angular" ngModel>
+                        <label for="Angular">Angular</label>  <input type="checkbox" name="Reacte" value="React" ngModel>   <label for="React">React</label>
+                        <input type="checkbox" name="Nodejse" value="Nodejs" ngModel>   <label for="Nodejs">Nodejs</label>
+                        <input type="checkbox" name="Otherse" value="Others" ngModel>   <label for="Others">Others</label>
+
+                    </div>
+
+
+                    <div class="other-teche">
+                        <label for="other-teche">If selected other tech then mention</label>
+                        <input type="text" name="otherteche" id="" class="other-tech-inpute" ngModel>
+
+                    </div>
+                    <div class="familiar-techf">
+
+                        <p>Please select all tech you are familiar in:</p>
+                        <input type="checkbox" name="Javascriptf" value="javascript" ngModel>   <label for="javascript"> javascript</label>   <input type="checkbox" name="Angularf" value="Angular" ngModel>
+                        <label for="Angular">Angular</label>  <input type="checkbox" name="Reactf" value="React" ngModel>   <label for="React">React</label>
+                        <input type="checkbox" name="Nodejsf" value="Nodejs" ngModel>   <label for="Nodejs">Nodejs</label>
+                        <input type="checkbox" name="Othersf" value="Others" ngModel>   <label for="Others">Others</label>
+
+                    </div>
+
+
+                    <div class="other-techf">
+                        <label for="other-techf">If selected other tech then mention</label>
+                        <input type="text" name="othertechf" id="" class="other-tech-inputf" ngModel>
+
+                    </div>
+                    <p>Are you currently on notice period?</p>
+                    <div>
+                        <input type="radio" name="bgchecke" value="yes">
+                        <label>Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="bgchecke" value="no">
+                        <label>No</label>
+                    </div>
+                    <div>
+                        <input type="date" name="date">
+                        <label>Date</label>
+                    </div>
+                    <div>
+                        <input type="number" name="noticeperiod">
+                        <label>Notice period duration</label>
+                    </div>
+                    <p>Have you applied before?</p>
+                    <div>
+                        <input type="radio" name="bgcheckf" value="yes">
+                        <label>Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="bgcheckf" value="no">
+                        <label>No</label>
+                    </div>
+                    <div class="other-tech">
+                        <label for="other-tech">If Yes which role</label>
+                        <input type="text" name="rolef" id="" class="rolef-input" ngModel>
+
+                    </div>
+                    <button type="submit">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

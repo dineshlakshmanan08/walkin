@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
 export class LoginFormComponent {
   constructor(private router: Router) { }
   isChecked: boolean = false;
-  
+
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
   }
+
   onSubmit(form: NgForm){
     if(form.valid){
      

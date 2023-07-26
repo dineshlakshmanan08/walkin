@@ -1,16 +1,67 @@
-.progressbar {
-    margin: 24px;
-    height: 56px;
-    border-radius: 2px;
-    background-color: white;
+@font-face {
+    src: url("../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
 }
 
-hr {
-    display: inline-block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 2px 5px;
-    padding: 0;
-    width: 100px;
+@font-face {
+    src: url("../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.taskbar {
+    min-height: 56px;
+    margin: 24px;
+    background-color: #FFFFFF;
+    // display: flex;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task1 {
+    display: flex;
+    align-items: center;
+}
+
+.round1 {
+    background-color: #757575;
+    color: #FFFFFF;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.round1.active {
+    background-color: #3FD28B;
+    /* Active color */
+    color: #333333;
+}
+
+.round-text {
+    font-family: QuicksandM;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.line {
+    flex: 1;
+    height: 3px;
+    margin: 0px 12px;
+    background-color: #EFEFEF;
+}
+
+@media screen and (min-width: 750px) {
+    .taskbar {
+        display: flex;
+    }
 }

@@ -1,55 +1,97 @@
-<div class="forms">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="first-name">
-            <label for="first-name">first-name</label>
-            <input type="text" name="first-name" id="" class="first-name-input" required ngModel>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="forms">
+        <div class="first-name label-style">
+            <label for="first-name">First Name*</label>
+        </div>
+        <div>
+            <input type="text" name="firstname" id="" class="first-name-input" required ngModel>
 
         </div>
         <div class="profile-pic">
-            <input type="file" name="profile-pic" id="" class="profile-pic-input" ngModel>
+            <input type="file" name="profilepic" id="" class="profile-pic-input" ngModel>
 
         </div>
-        <div class="last-name">
-            <label for="last-name">last-name</label>
-            <input type="text" name="last-name" id="" class="last-name-input" required ngModel>
+        <div class="last-name label-style">
+            <label for="last-name">Last Name*</label> </div>
+        <div>
+            <input type="text" name="lastname" id="" class="last-name-input" required ngModel>
 
         </div>
-        <div class="email">
-            <label for="email">Email</label>
+        <div class="email label-style">
+            <label for="email">Email*</label>
+        </div>
+        <div>
             <input type="email" name="email" id="" class="email-input" email required ngModel>
 
         </div>
-        <div class="phone">
-            <label for="number">Number</label>
+        <div class="phone label-style">
+            <label for="number">Phone Number*</label></div>
+        <div>
             <input type="number" name="number" id="" class="number-input" required ngModel>
 
         </div>
-        <div class="resume">
-            <input type="file" name="resume" id="" class="resume-input" ngModel>
-
+        <div class="resume label-style">
+            <label for="number">UPLOAD RESUME</label></div>
+        <div> <input type="file" name="resume" id="" class="resume-input" ngModel>
         </div>
-        <div class="portfolio">
-            <label for="portfolio">portfolio link</label>
+        <div class="portfolio label-style">
+            <label for="portfolio">Enter Portfolio url (if any)</label></div>
+        <div>
             <input type="text" name="portfolio" id="" class="portfolio-input" required ngModel>
 
         </div>
-        <div class="preferred-roles">
+        <div class="preferred-roles label-style">
 
             <p>Please select your preferred-roles:</p>
-            <input type="checkbox" name="instructional_designer" value="instructional_designer" ngModel>   <label for="instructional_designer">instructional designer</label>   <input type="checkbox" name="software_engineer" value="software_engineer" ngModel>
-            <label for="software_engineer">software engineer</label>  <input type="checkbox" name="software_quality_engineer" value="software_quality_engineer" ngModel>   <label for="software_quality_engineer">software quality engineer</label>
+            <div class="idr">
+                <label for="remember-me" (click)="toggleCheckbox1() " class="remember-me-label">
+                    <input type="checkbox"  [(ngModel)]="isChecked1" name="instructionaldesigner">
+                      <img [src]="isChecked1 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                      Instructional Designer</label>
+                <!-- <input type="checkbox"  value="instructional_designer" ngModel>
+                <span for="instructional_designer">Instructional Designer</span> -->
+            </div>
+
+            <div class="se">
+                <label for="remember-me" (click)="toggleCheckbox2() " class="remember-me-label">
+                    <input type="checkbox"  [(ngModel)]="isChecked2" name="softwareengineer">
+                      <img [src]="isChecked2 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                      Software Engineer</label>
+
+                <!-- <input type="checkbox" name="softwareengineer" value="software_engineer" ngModel>
+                <span for="software_engineer">Software Engineer</span> -->
+            </div>
+            <div class="sqe">
+                <label for="remember-me" (click)="toggleCheckbox3() " class="remember-me-label">
+                    <input type="checkbox"  [(ngModel)]="isChecked3" name="softwarequalityengineer">
+                      <img [src]="isChecked3 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                      Software Quality Engineer</label>
+                <!-- <input type="checkbox" name="softwarequalityengineer" value="software_quality_engineer" ngModel>
+                <span for="software_quality_engineer">Software Quality Engineer</span> -->
+            </div>
+
+
+
+
 
         </div>
-        <div class="referral">
-            <label for="referral">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
-            <input type="text" name="referral" id="" class="referral-input" ngModel>
-
+        <div class="referral label-style">
+            <label for="referral ">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
         </div>
+        <div>
+            <input type="text" name="referral " id=" " class="referral-input " ngModel>
+        </div>
+
         <div class="job-updates">
-
-            <input type="checkbox" name="job_updates" value="job_updates" ngModel>   <label for="job_updates">job updates</label>
+            <label for="remember-me" (click)="toggleCheckbox4() " class="remember-me-label">
+                <input type="checkbox"  [(ngModel)]="isChecked4" name="jobupdates">
+                  <img [src]="isChecked4 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                  </label>
+            <input type="checkbox" name="jobupdates " value="job_updates " ngModel>   <span for="job_updates ">Send me job related updates via mail</span>
 
         </div>
-        <button type="submit">Next</button>
-    </form>
-</div>
+    </div>
+    <div class="bg-tag">
+        <button type="submit " class="next-btn">Next</button>
+    </div>
+</form>

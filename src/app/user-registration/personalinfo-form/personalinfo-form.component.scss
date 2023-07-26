@@ -1,11 +1,113 @@
+@font-face {
+    font-family: "QuicksandB";
+    src: url("../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+}
+
+@font-face {
+    font-family: "QuicksandM";
+    src: url("../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+}
+
 .forms {
     margin: 24px;
     background-color: white;
     position: relative;
 }
 
-.first-name {
-    display: inline-block;
+.label-style {
+    label,
+    p {
+        display: inline-block;
+        font-family: "QuicksandM";
+        font-size: 12px;
+        color: #666666;
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+}
+
+input[type="email"] {
+    border: none;
+    background: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="password"] {
+    border: none;
+    background: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="number"] {
+    border: none;
+    background: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="text"] {
+    border: none;
+    background: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    background-color: transparent;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    background-color: transparent;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    background-color: transparent;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #EEEEEE;
+    width: 50%;
+    background-color: transparent;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #666666;
 }
 
 .profile-pic {
@@ -14,4 +116,62 @@
     left: 80%;
 }
 
-.last-name {}
+label,
+input {
+    margin-left: 24px;
+}
+
+.idr {
+    margin-bottom: 20px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+}
+
+.se {
+    margin-bottom: 20px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+}
+
+.sqe {
+    margin-bottom: 20px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+}
+
+.job-updates {
+    margin-top: 24px;
+    padding-bottom: 20px;
+}
+
+.referral {
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #222222;
+}
+
+.checkboxPosition {
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.next-btn {
+    display: block;
+    margin: 32px auto;
+    background-color: #3FD28B;
+    min-width: 90px;
+    min-height: 28px;
+    border: none;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #1F2834;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 3px 5px #0000003D;
+}
