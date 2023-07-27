@@ -8,11 +8,11 @@ import { UserDataService } from '../user-data.service';
 })
 export class ReviewFormComponent implements OnInit{
   constructor(private router: Router,private userdataService: UserDataService) { }
-  ngOnInit(){
-    const data = this.userdataService.getQualificationDataE();
-    const data1 = this.userdataService.getQualificationDataF();
-    const data2 = this.userdataService.getQualificationData();
-    console.log(data)
-    console.log(data1)
-  }
+ 
+    ngOnInit() {
+      this.userdataService.setPageNo3();
+       console.log(this.userdataService.getPageNo())
+    }
+  
+  
 }

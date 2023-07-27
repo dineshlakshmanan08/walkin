@@ -8,10 +8,12 @@ import { LoginPageModule } from './login-page/login-page.module';
 import { FormsModule } from '@angular/forms';
 
 import { UserRegistrationModule } from './user-registration/user-registration.module';
+import { WalkinModule } from './walkin/walkin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
 
     
        
@@ -22,6 +24,7 @@ import { UserRegistrationModule } from './user-registration/user-registration.mo
     LoginPageModule,
    FormsModule,
    UserRegistrationModule,
+   WalkinModule
   ],
   providers: [],
   bootstrap: [AppComponent]

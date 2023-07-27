@@ -5,6 +5,7 @@ import { PersonalinfoFormComponent } from './user-registration/personalinfo-form
 import { QualificationFormComponent } from './user-registration/qualification-form/qualification-form.component';
 import { ReviewFormComponent } from './user-registration/review-form/review-form.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { HallticketComponent } from './walkin/hallticket/hallticket.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, pathMatch: 'full' }, 
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'qualification', component: QualificationFormComponent },
     { path: 'review', component: ReviewFormComponent },
   ]}, 
+  { path: 'hallticket', component: HallticketComponent }, 
   
 ];
 

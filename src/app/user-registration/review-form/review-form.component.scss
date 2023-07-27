@@ -1,0 +1,78 @@
+@font-face {
+    src: url("../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+
+@font-face {
+    src: url("../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+
+.first-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.personal-info {
+    margin: 24px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+}
+
+.edit {
+    margin: 24px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #1F7A54;
+}
+
+.second-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qualification-info {
+    margin: 24px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+}
+
+.edit-btn {
+    margin: 24px;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #1F7A54;
+}
+
+.personal-info-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px;
+    padding: 24px;
+    background-color: white;
+}
+
+.outer-qualification {
+    margin: 24px;
+}
+
+.flex-eq {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px 200px;
+}
+
+.outer-qualification {
+    background-color: white;
+}
+
+.inner-qualification-personal {
+    background-color: white;
+    margin: 24px;
+}
+
+.m {
+    margin: 24px;
+}

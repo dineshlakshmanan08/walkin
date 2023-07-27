@@ -14,23 +14,13 @@ export class RegistrationProgressbarComponent implements OnInit {
   route2: boolean = false;
   route3: boolean = false;
 
-
+page: number = 0;
   ngOnInit() {
-    this.changeRoute();
    
+    this.page = this.userdataService.getPageNo();
+     console.log(this.userdataService.getPageNo())
   }
-  changeRoute(){
-    if(this.router.url == '/registration/personalinfo'){
-      this.route1 = true;
-    }else if(this.router.url == '/registration/qualification'){
-      this.route1 = true;
-      this.route2 = true;
-    }else if(this.router.url == '/registration/review'){
-      this.route1 = true;
-      this.route2 = true;
-      this.route3 = true;
-    }
-  }
+
 
 
 
