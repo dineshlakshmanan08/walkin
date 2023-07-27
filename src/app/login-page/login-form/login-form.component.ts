@@ -24,7 +24,7 @@ export class LoginFormComponent {
       const checkbox = form.value.checkbox;
       console.log(`${email}  ${password}  ${checkbox}`)
      
-      this.router.navigate(['/registration/',email]);
+      this.router.navigate(['/walkin/walkinlists',email]);
       
     }else{
       alert("Wrong user credentials")

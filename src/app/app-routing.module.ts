@@ -6,7 +6,9 @@ import { QualificationFormComponent } from './user-registration/qualification-fo
 import { ReviewFormComponent } from './user-registration/review-form/review-form.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HallticketComponent } from './walkin/hallticket/hallticket.component';
-
+import { WalkinListsComponent } from './walkin/walkin-lists/walkin-lists.component';
+import { WalkinComponent } from './walkin/walkin.component';
+import { WalkinSpecificComponent } from './walkin/walkin-lists/walkin-specific/walkin-specific.component';
 const routes: Routes = [
   { path: '', component: LoginPageComponent, pathMatch: 'full' }, 
   { path: 'registration',  component: UserRegistrationComponent,children: [
@@ -14,7 +16,14 @@ const routes: Routes = [
     { path: 'qualification', component: QualificationFormComponent },
     { path: 'review', component: ReviewFormComponent },
   ]}, 
-  { path: 'hallticket', component: HallticketComponent }, 
+  { path: 'walkin', component: WalkinComponent,children: [
+    { path: 'walkinlists/:email', component: WalkinListsComponent}, 
+      { path: 'walkinlists/:email/:id', component: WalkinSpecificComponent },
+   
+    
+   
+   
+  ] }, 
   
 ];
 

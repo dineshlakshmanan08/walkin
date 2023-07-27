@@ -24,7 +24,7 @@ import { WalkinModule } from './walkin/walkin.module';
     LoginPageModule,
    FormsModule,
    UserRegistrationModule,
-   WalkinModule
+   WalkinModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

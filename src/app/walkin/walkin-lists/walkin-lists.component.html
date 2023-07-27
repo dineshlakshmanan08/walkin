@@ -1,0 +1,31 @@
+<div class="outerGrid">
+    <div class="card" *ngFor="let data of datas">
+
+        <div class="title">
+            Walk In for {{data.walkinFor}} Job Role
+        </div>
+
+        <div class="date-time">
+            Date and time:
+        </div>
+        <div class="dates">
+            <span> {{data.date}}</span>
+            <span>{{data.location}}</span>
+        </div>
+        <hr>
+        <div class="job-roles">
+            Job roles
+        </div>
+        <div class="roles"> {{data.idPackage == "Rs. 5,00,000 lpa" ? 'Instructional Designer' : ''}}
+        </div>
+        <div class="roles"> {{data.sePackage == "Rs. 8,00,000 lpa" ? 'Software Engineer' : ''}}
+        </div>
+        <div class="roles"> {{data.sqePackage == "Rs. 6,00,000 lpa" ? 'Software Quality Engineer' : ''}}
+        </div>
+        <div class="internship"> {{data.internship}}
+        </div>
+        <div class="btn">
+            <button routerLink='{{data.id}}'>VIEW MORE DETAILS</button>
+        </div>
+    </div>
+</div>

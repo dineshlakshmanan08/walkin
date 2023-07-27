@@ -1,0 +1,29 @@
+.outerGrid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    margin-bottom: 50px;
+}
+
+.card {
+    grid-column: 2/3;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.title {
+    position: relative;
+}
+
+.expiry {
+    position: absolute;
+    top: 79px;
+    right: 15%;
+    border: 2px solid #FFE4E6;
+    background-color: #FFE4E6;
+    color: #D10107;
+    width: 91px;
+    height: 14px;
+    font-size: 12px;
+}
