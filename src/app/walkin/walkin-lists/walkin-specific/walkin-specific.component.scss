@@ -1,0 +1,92 @@
+.outerGrid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    margin-bottom: 50px;
+}
+
+.card {
+    grid-column: 2/3;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.title {
+    position: relative;
+}
+
+.expiry {
+    position: absolute;
+    top: 79px;
+    right: 15%;
+    border: 2px solid #FFE4E6;
+    background-color: #FFE4E6;
+    color: #D10107;
+    width: 91px;
+    height: 14px;
+    font-size: 12px;
+}
+
+.prerequisite {
+    background-color: #DBEFFF;
+}
+
+.time-slots {
+    grid-column: 2/3;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.card3 {
+    grid-column: 2/3;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.cards0 {
+    grid-column: 2/3;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 15px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.cards1 {
+    grid-column: 2/3;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.cards2 {
+    grid-column: 2/3;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.cardss0 {}
+
+.cardss1 {
+    position: absolute;
+}
+
+.cardss2 {
+    position: absolute;
+}
+
+.car0 {
+    display: none;
+}
+
+.car1 {
+    display: none;
+}
+
+.car2 {
+    display: none;
+}

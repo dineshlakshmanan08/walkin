@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef,Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserDataService } from 'src/app/user-registration/user-data.service';
 @Component({
@@ -9,13 +9,32 @@ import { UserDataService } from 'src/app/user-registration/user-data.service';
 export class WalkinSpecificComponent implements OnInit {
   dynamicValue: string = "";
    dataById: any = [];
-  constructor(private route: ActivatedRoute,private userdataService: UserDataService) { }
+   toggleCheck: boolean = true;
+   toggleCheck2: boolean = true;
   
+   packageJ: string = '';
+   description: string = '';
+   requirements: string = '';
+
+  constructor(private route: ActivatedRoute,private userdataService: UserDataService,private elementRef: ElementRef, private renderer: Renderer2) { }
+  togglePrerequisite(){
+    
+    this.toggleCheck = !this.toggleCheck;
+  }
+  togglePrerequisite2(a: number){
+    const element = this.elementRef.nativeElement;
+    this.renderer.setStyle(element, 'color', 'red');
+   
+   console.log(a)
+   this.toggleCheck2 = !this.toggleCheck2;
+   console.log(this.dataById.jobRoles[a].package)
+  }
   ngOnInit(){
     this.route.paramMap.subscribe(params => {
       this.dynamicValue = this.route.snapshot.paramMap.get('id') ?? '';
       console.log(this.dynamicValue)
       const data = this.userdataService.getWalkinInfo();
+      console.log(data)
       this.dataById = data[+this.dynamicValue - 1];
       console.log(this.dataById)
     });

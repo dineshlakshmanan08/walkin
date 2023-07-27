@@ -17,6 +17,7 @@ export class  QualificationFormComponent{
     console.log(this.userdataService.getData())
  }
   toggleForm(){
+    
     this.toggleCheck = !this.toggleCheck;
   }
   toggleForm2(){

@@ -9,6 +9,7 @@ import { RouterLink } from '@angular/router';
 })
 export class WalkinListsComponent implements OnInit {
   datas: any = [];
+  roles: any;
   checkExpiry: boolean = false;
   constructor(private router: Router,private userdataService: UserDataService) { }
 
@@ -16,5 +17,6 @@ export class WalkinListsComponent implements OnInit {
     this.datas = this.userdataService.getWalkinInfo()
     console.log(this.datas)
     
+   
   }
 }

@@ -1,1 +1,73 @@
-<p>walkin-specific works!</p>
+<div class="outerGrid">
+    <div class="card">
+
+        <div class="title">
+            Walk In for {{dataById.walkinFor}} Job Role
+        </div>
+
+        <div class="date-time">
+            Date and time:
+        </div>
+        <div class="dates">
+            <span> {{dataById.date}}</span>
+            <span>{{dataById.location}}</span>
+        </div>
+        <hr>
+        <div class="job-roles">
+            Job roles
+        </div>
+        <div class="roles"> {{dataById.idPackage == "Rs. 5,00,000 lpa" ? 'Instructional Designer' : ''}}
+        </div>
+        <div class="roles"> {{dataById.sePackage == "Rs. 8,00,000 lpa" ? 'Software Engineer' : ''}}
+        </div>
+        <div class="roles"> {{dataById.sqePackage == "Rs. 6,00,000 lpa" ? 'Software Quality Engineer' : ''}}
+        </div>
+        <div class="internship"> {{dataById.internship}}
+        </div>
+        <div class="prerequisite">Pre-requisites & Application Process <button type="click" (click)="togglePrerequisite()">c</button></div>
+    </div>
+    <div class="time-slots" *ngIf="!toggleCheck">
+        <div class="card2">
+            <div class="time-slots-title">
+                Time Slots & Preferences
+            </div>
+            <form>
+                <div class="select">
+                    <input type="radio">
+                </div>
+                <div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <input type="file">
+                </div>
+                <button type="submit">APPLY</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="card3">
+        <div>
+            <div></div>
+        </div>
+        <div *ngFor="let data of dataById.jobRoles; let i = index">
+            <div>{{data.name}}
+                <button type="click" (click)="togglePrerequisite2(i)">c</button>
+                <br>
+                <div class="car{{i}}">
+                    <div>{{data.package}}</div>
+                    <div>{{data.description}}</div>
+                    <div>{{data.requirements}}</div>
+                    <br><br><br>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
