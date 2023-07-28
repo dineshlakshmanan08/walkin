@@ -1,8 +1,11 @@
 <div class="outerGrid">
-    <div class="card" *ngFor="let data of datas; let i = index" #myelement>
+    <div class="card" *ngFor="let data of datas; let i = index" #myelement [ngClass]="{ hide: isExpired(data.expiry)}">
 
         <div class="title">
             Walk In for {{data.walkinFor}} Job Role
+            <div [ngClass]="{ expiry: !isExpired(data.expiry)}">
+                Expires in {{expiryDay}} days
+            </div>
         </div>
 
         <div class="date-time" #element>

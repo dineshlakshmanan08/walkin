@@ -18,9 +18,7 @@ export class  PersonalinfoFormComponent {
   isChecked4: boolean = false;
   page: number = 0;
   ngOnInit() {
-    this.userdataService.setPageNo1();
-     this.page = this.userdataService.getPageNo();
-     console.log(this.userdataService.getPageNo())
+
   }
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
@@ -55,8 +53,8 @@ export class  PersonalinfoFormComponent {
       const softwarequalityengineer = form.value.softwarequalityengineer;
      
       this.userdataService.setData({email,profilepic,firstname,lastname,number,referral,resume,portfolio,jobupdates,softwareengineer,softwarequalityengineer,instructionaldesigner})
-      this.userdataService.setPageNo2();
-      console.log(this.userdataService.getPageNo())
+
+    
       this.router.navigate(['/registration/','qualification']);
       // this.router.navigate(['/qualification/']);
       

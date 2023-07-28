@@ -7,20 +7,15 @@ import { filter } from 'rxjs/operators';
   templateUrl: './registration-progressbar.component.html',
   styleUrls: ['./registration-progressbar.component.scss']
 })
-export class RegistrationProgressbarComponent implements OnInit {
+export class RegistrationProgressbarComponent  {
   constructor(private router: Router,private userdataService: UserDataService) { }
-  currentRoute: string = '';
-  route1: boolean = false;
-  route2: boolean = false;
-  route3: boolean = false;
 
-page: number = 0;
-  ngOnInit() {
+
+
+  isLinkActive(link: string): boolean {
+    return this.router.url === link;
    
-    this.page = this.userdataService.getPageNo();
-     console.log(this.userdataService.getPageNo())
   }
-
 
 
 

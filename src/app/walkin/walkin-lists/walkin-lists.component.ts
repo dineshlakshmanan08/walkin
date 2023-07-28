@@ -13,6 +13,8 @@ export class WalkinListsComponent implements OnInit,AfterViewInit {
   checkExpiry: boolean = false;
   dateFromDB: string = ''; 
   differenceInDays: number = 0;
+  expires: boolean = false;
+  expiryDay: number = 0;
 
   @ViewChildren('myElement') myElements: QueryList<any> | any;
   constructor(private router: Router,private userdataService: UserDataService) { }
@@ -28,18 +30,24 @@ export class WalkinListsComponent implements OnInit,AfterViewInit {
   }
   ngAfterViewInit(): void {
     // Call the function you want to run when the element is rendered
-    this.myFunction();
+   
   }
-  myFunction(): void {
+  isExpired(dateDb: string): boolean {
     const today = new Date();
 
     
-    const dbDate = new Date(this.dateFromDB);
-
-   console.log(this.myElements)
+    const dbDate = new Date(dateDb);
+    console.log(dbDate)
+   
     const timeDifferenceInMilliseconds = dbDate.getTime() - today.getTime();
     this.differenceInDays = Math.ceil(timeDifferenceInMilliseconds / (1000 * 60 * 60 * 24));
     console.log('run')
     console.log(this.differenceInDays)
+    this.expiryDay = this.differenceInDays;
+    if(this.differenceInDays > 0) {
+      return false;
+    }else {
+      return true;
+    }
   }
 }

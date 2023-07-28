@@ -1,16 +1,16 @@
 <div class="taskbar">
     <div class="task1">
-        <div [ngClass]="page >= 1 ? 'round1 active' : 'round1' ">1</div>
+        <div class="round1" [ngClass]="{ active: isLinkActive('/registration/personalinfo') || isLinkActive('/registration/qualification') ||  isLinkActive('/registration/review')  }">1</div>
         <p class="round-text">Personal Information</p>
     </div>
     <div class="line"></div>
     <div class="task1">
-        <div [ngClass]="page >= 2 ? 'round1 active' : 'round1' ">2</div>
+        <div class="round1" [ngClass]="{ active: isLinkActive('/registration/qualification') || isLinkActive('/registration/review')  }">2</div>
         <p class="round-text">Qualifications</p>
     </div>
     <div class="line"></div>
     <div class="task1">
-        <div [ngClass]="page == 3 ? 'round1 active' : 'round1' ">3</div>
+        <div class="round1" [ngClass]="{ active: isLinkActive('/registration/review') }">3</div>
         <p class="round-text">Review and Proceed</p>
     </div>
 </div>

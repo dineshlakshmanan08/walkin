@@ -10,8 +10,7 @@ export class ReviewFormComponent implements OnInit{
   constructor(private router: Router,private userdataService: UserDataService) { }
  
     ngOnInit() {
-      this.userdataService.setPageNo3();
-       console.log(this.userdataService.getPageNo())
+     
     }
   
   

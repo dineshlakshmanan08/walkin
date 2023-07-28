@@ -29,12 +29,12 @@
 
 .expiry {
     position: absolute;
-    top: 79px;
-    right: 15%;
+    top: -25px;
+    right: 5%;
     border: 2px solid #FFE4E6;
     background-color: #FFE4E6;
     color: #D10107;
-    width: 91px;
+    width: 101px;
     height: 14px;
     font-size: 12px;
 }
@@ -113,4 +113,8 @@ hr {
         color: #222222;
         margin-bottom: 10px;
     }
+}
+
+.hide {
+    display: none;
 }
