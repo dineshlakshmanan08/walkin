@@ -23,13 +23,15 @@ export class WalkinSpecificComponent implements OnInit {
   }
   togglePrerequisite2(a: number){
     const element = this.elementRef.nativeElement;
-    this.renderer.setStyle(element, 'color', 'red');
+   
    
    console.log(a)
    this.toggleCheck2 = !this.toggleCheck2;
    console.log(this.dataById.jobRoles[a].package)
   }
   ngOnInit(){
+ 
+
     this.route.paramMap.subscribe(params => {
       this.dynamicValue = this.route.snapshot.paramMap.get('id') ?? '';
       console.log(this.dynamicValue)

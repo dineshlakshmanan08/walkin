@@ -1,28 +1,28 @@
 <div class="outerGrid">
-    <div class="card" *ngFor="let data of datas; let i = index">
-        {{i}}
+    <div class="card" *ngFor="let data of datas; let i = index" #myelement>
+
         <div class="title">
             Walk In for {{data.walkinFor}} Job Role
         </div>
 
-        <div class="date-time">
+        <div class="date-time" #element>
             Date and time:
         </div>
         <div class="dates">
-            <span> {{data.date}}</span>
+            <span class="date-span"> {{data.date}}</span> &nbsp;&nbsp;&nbsp;
             <span>{{data.location}}</span>
 
         </div>
+
         <hr>
         <div class="job-roles">
             Job roles
         </div>
-        <div *ngFor="let data of datas[i].jobRoles; let j  = index">{{data.name}}</div>
-        <div class="internship"> {{data.internship}}
-        </div>
-        <div>
+        <div *ngFor="let data of datas[i].jobRoles; let j  = index" class="roles">{{data.name}}</div>
 
+        <div class="internship" *ngIf="data.internship"> {{data.internship}}
         </div>
+
         <div class="btn">
             <button routerLink='{{data.id}}'>VIEW MORE DETAILS</button>
         </div>

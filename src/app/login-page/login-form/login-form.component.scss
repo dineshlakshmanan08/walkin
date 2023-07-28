@@ -26,7 +26,7 @@ $btn-color:#3FD28B;
 }
 
 .outerContainerBg {
-    height: calc(100vh - 58px);
+    min-height: 100vh;
     background-color: #EEEEEE;
     display: flex;
     flex-direction: column;

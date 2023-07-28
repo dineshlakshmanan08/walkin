@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'walkin', component: WalkinComponent,children: [
     { path: 'walkinlists/:email', component: WalkinListsComponent}, 
       { path: 'walkinlists/:email/:id', component: WalkinSpecificComponent },
-   
+      { path: 'hallticket', component: HallticketComponent  },
     
    
    
