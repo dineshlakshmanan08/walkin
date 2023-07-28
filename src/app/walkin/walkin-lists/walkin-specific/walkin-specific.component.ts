@@ -15,7 +15,7 @@ export class WalkinSpecificComponent implements OnInit {
    packageJ: string = '';
    description: string = '';
    requirements: string = '';
-
+   richTextData: string = '<h1>Welcome to My Website</h1><p>This is some <strong>rich text</strong> content.</p>';
   constructor(private route: ActivatedRoute,private userdataService: UserDataService,private elementRef: ElementRef, private renderer: Renderer2) { }
   togglePrerequisite(){
     

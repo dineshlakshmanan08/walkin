@@ -13,6 +13,7 @@ export class WalkinListsComponent implements OnInit,AfterViewInit {
   checkExpiry: boolean = false;
   dateFromDB: string = ''; 
   differenceInDays: number = 0;
+ 
   @ViewChildren('myElement') myElements: QueryList<any> | any;
   constructor(private router: Router,private userdataService: UserDataService) { }
 

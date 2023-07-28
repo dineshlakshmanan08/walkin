@@ -4,13 +4,14 @@
         <div class="title">
             Walk In for {{dataById.walkinFor}} Job Role
         </div>
-
+        <div [innerHTML]="dataById.generalInstructions"></div>
         <div class="date-time">
             Date and time:
         </div>
         <div class="dates">
             <span> {{dataById.date}}</span>
             <span>{{dataById.location}}</span>
+            <div [innerHTML]="dataById.process"></div>
         </div>
         <hr>
         <div class="job-roles">
@@ -54,6 +55,7 @@
             <div>{{data.name}}
                 <button type="click" (click)="togglePrerequisite2(i)">c</button>
                 <br>
+
                 <div class="car{{i}}">
                     <div>{{data.package}}</div>
                     <div>{{data.description}}</div>
@@ -62,7 +64,7 @@
                 </div>
 
             </div>
-</div>
+        </div>
 
     </div>
 </div>
