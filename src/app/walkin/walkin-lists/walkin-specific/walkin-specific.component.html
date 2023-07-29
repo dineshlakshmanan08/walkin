@@ -1,70 +1,147 @@
+<div class="space"></div>
 <div class="outerGrid">
     <div class="card">
 
         <div class="title">
             Walk In for {{dataById.walkinFor}} Job Role
+
         </div>
-        <div [innerHTML]="dataById.generalInstructions"></div>
+        <button type="click" class="apply-btn" (click)="formData()">APPLY</button>
+        <!-- <div [innerHTML]="dataById.generalInstructions"></div> -->
         <div class="date-time">
             Date and time:
         </div>
         <div class="dates">
             <span> {{dataById.date}}</span>
-            <span>{{dataById.location}}</span>
-            <div [innerHTML]="dataById.process"></div>
+            <span class="location-img">
+            <span><img src="../../../../assets/svg/location_on_black_24dp.svg" alt="" class="loc-img"></span>
+            <span class="location">{{dataById.location}}</span>
+            </span>
+            <!-- <div [innerHTML]="dataById.process"></div> -->
         </div>
-        <hr>
+        <div class="move">
+            <hr>
+        </div>
+
         <div class="job-roles">
             Job roles
         </div>
-        <div class="roles"> {{dataById.idPackage == "Rs. 5,00,000 lpa" ? 'Instructional Designer' : ''}}
-        </div>
-        <div class="roles"> {{dataById.sePackage == "Rs. 8,00,000 lpa" ? 'Software Engineer' : ''}}
-        </div>
-        <div class="roles"> {{dataById.sqePackage == "Rs. 6,00,000 lpa" ? 'Software Quality Engineer' : ''}}
-        </div>
-        <div class="internship"> {{dataById.internship}}
-        </div>
-        <div class="prerequisite">Pre-requisites & Application Process <button type="click" (click)="togglePrerequisite()">c</button></div>
-    </div>
-    <div class="time-slots" *ngIf="!toggleCheck">
-        <div class="card2">
-            <div class="time-slots-title">
-                Time Slots & Preferences
-            </div>
-            <form>
-                <div class="select">
-                    <input type="radio">
-                </div>
-                <div>
-                    <input type="checkbox">
-                </div>
-                <div>
-                    <input type="file">
-                </div>
-                <button type="submit">APPLY</button>
-            </form>
-        </div>
+        <span *ngFor="let data of dataById.jobRoles; let i = index">
+            <span class="job-roles-span" *ngIf="data">{{data.name}}</span>
+        </span>
 
-    </div>
-    <div class="card3">
-        <div>
-            <div></div>
+        <div class="prerequisite">
+            <div class="pre-div">Pre-requisites & Application Process</div>
+            <div class="arrow-img" (click)="togglePre()"><img src="../../../../assets/svg/expand_less_black_24dp.svg" alt=""></div>
         </div>
-        <div *ngFor="let data of dataById.jobRoles; let i = index">
-            <div>{{data.name}}
-                <button type="click" (click)="togglePrerequisite2(i)">c</button>
+        <div *ngIf="togglePreCheck">
+            <div class="pad">
+
+                <div class="title1">
+                    General Instructions:
+                </div>
                 <br>
-
-                <div class="car{{i}}">
-                    <div>{{data.package}}</div>
-                    <div>{{data.description}}</div>
-                    <div>{{data.requirements}}</div>
-                    <br><br><br>
+                <div class="data1" [innerHTML]="dataById.generalInstructions"></div>
+                <hr>
+                <div class="title1">
+                    Instructions for the Exam:
                 </div>
+                <br>
+                <div class="data1" [innerHTML]="dataById.instructions"></div>
+                <hr>
+                <div class="title1">
+                    Minimum System Requirements:
+                </div>
+                <br>
+                <div class="data1" [innerHTML]="dataById.systemRequirement"></div>
+                <hr>
+                <div class="title1">
+                    Process:
+                </div>
+                <br>
+                <div class="data1" [innerHTML]="dataById.process"></div>
+
+
 
             </div>
         </div>
+    </div>
+    <div class="card2">
+        <div class="time-preference">
+            Time Slots & Preferences
+        </div>
+        <form [formGroup]="myForm">
+            <div class="select">
+                <div class="select-time">Select a Time Slot:</div>
+                <div>
+                    <input type="radio" name="time" value="9:00 AM - 11:00 AM" formControlName="time">
+                    <label class="time-label">9:00 AM - 11:00 AM</label>
+                </div>
+                <div>
+                    <input type="radio" name="time" value="1:00 PM - 3:00 PM" formControlName="time">
+                    <label class="time-label">1:00 PM - 3:00 PM</label>
+                </div>
+
+            </div>
+            <hr>
+            <div class="prefernce-checkbox">
+                <div class="preferred-roles label-style">
+
+                    <p class="please-line">Please select your preferred-roles:</p>
+                    <div class="idr">
+                        <label for="remember-me" (click)="toggleCheckbox1() " class="remember-me-label">
+                            <input type="checkbox" value="id"  formControlName="role1">
+                              <img [src]="isChecked1 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                              Instructional Designer</label>
+                        <!-- <input type="checkbox"  value="instructional_designer" ngModel>
+                        <span for="instructional_designer">Instructional Designer</span> -->
+                    </div>
+
+                    <div class="se">
+                        <label for="remember-me" (click)="toggleCheckbox2() " class="remember-me-label">
+                            <input type="checkbox" value="se"   formControlName="role2">
+                              <img [src]="isChecked2 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                              Software Engineer</label>
+
+                        <!-- <input type="checkbox" name="softwareengineer" value="software_engineer" ngModel>
+                        <span for="software_engineer">Software Engineer</span> -->
+                    </div>
+                    <div class="sqe">
+                        <label for="remember-me" (click)="toggleCheckbox3() " class="remember-me-label">
+                            <input type="checkbox" value="sqe"   formControlName="role3">
+                              <img [src]="isChecked3 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
+                              Software Quality Engineer</label>
+                        <!-- <input type="checkbox" name="softwarequalityengineer" value="software_quality_engineer" ngModel>
+                        <span for="software_quality_engineer">Software Quality Engineer</span> -->
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            <hr>
+            <div class="resume">
+
+                <input #uploadResume type="file" id="resumeInput" accept=".pdf" (change)="onResumeSelected($event)" hidden>
+                <img class="upload" src="../../../../assets/svg/Upload_black_24dp.svg" alt="resume-icon">
+                <h6 class="resume-text" (click)="uploadResume.click()">UPLOAD UPDATED RESUME</h6>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="displayRoles">
+
+        <div *ngFor="let data of dataById.jobRoles; let i = index">
+            <app-show-roles [role]="data"></app-show-roles>
+
+
+        </div>
+
+
 
     </div>
 </div>

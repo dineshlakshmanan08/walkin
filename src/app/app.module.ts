@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginPageModule } from './login-page/login-page.module';
-import { FormsModule } from '@angular/forms';
+
 
 import { UserRegistrationModule } from './user-registration/user-registration.module';
 import { WalkinModule } from './walkin/walkin.module';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { WalkinModule } from './walkin/walkin.module';
    FormsModule,
    UserRegistrationModule,
    WalkinModule,
+  ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

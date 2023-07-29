@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "QuicksandB";
+    src: url("../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+}
+
+@font-face {
+    font-family: "QuicksandM";
+    src: url("../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.input-data {
+    font-family: QuicksandM;
+    font-size: 15px;
+}

@@ -1,34 +1,90 @@
+@font-face {
+    font-family: "QuicksandB";
+    src: url("../../../../assets/Quicksand/static/Quicksand-Bold.ttf");
+}
+
+@font-face {
+    font-family: "QuicksandM";
+    src: url("../../../../assets/Quicksand/static/Quicksand-Medium.ttf");
+}
+
 .outerGrid {
-    margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    margin-bottom: 50px;
+    grid-template-columns: 1fr 7fr 1fr;
 }
 
 .card {
     grid-column: 2/3;
-    border: 2px solid black;
-    padding: 15px;
+    padding-top: 15px;
     margin-bottom: 50px;
-}
-
-.title {
+    background-color: white;
     position: relative;
 }
 
-.expiry {
-    position: absolute;
-    top: 79px;
-    right: 15%;
-    border: 2px solid #FFE4E6;
-    background-color: #FFE4E6;
-    color: #D10107;
-    width: 91px;
-    height: 14px;
+.card2 {
+    grid-column: 2/3;
+    padding-top: 15px;
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 15px;
+}
+
+.title {
+    font-family: "QuicksandM";
+    font-size: 22px;
+    color: #222222;
+    padding-bottom: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.date-time {
+    font-family: "QuicksandM";
     font-size: 12px;
+    color: #666666;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dates {
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #666666;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .prerequisite {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #DBEFFF;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-self: center;
+}
+
+.prerequisite-styles-for-roles {
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-self: center;
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    margin-top: 0;
+    padding-top: 0px;
+}
+
+.roles-dropdown {
+    display: flex;
+    justify-content: space-between;
     background-color: #DBEFFF;
 }
 
@@ -69,24 +125,214 @@
     position: relative;
 }
 
-.cardss0 {}
+.space {
+    padding-top: 26px;
+}
 
-.cardss1 {
+.job-roles {
+    padding-top: 5px;
+    font-size: 12px;
+    color: #666666;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    font-family: "QuicksandM";
+}
+
+.move {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.job-roles-span {
+    padding-top: 5px;
+    font-size: 14px;
+    color: #1F7A54;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: "QuicksandM";
+}
+
+.location-img {
+    margin-left: 50px;
+}
+
+.loc-img {
+    margin-top: 15px;
+    height: 13px;
+}
+
+.pre-btn {}
+
+.pre-div {
+    font-size: 16px;
+    color: #222222;
+    padding-left: 15px;
+    font-family: "QuicksandM";
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.arrow-img {
+    cursor: pointer;
+    padding-left: 20px;
+    border-left: 2px solid #666666;
+    padding-right: 20px;
+    padding-top: 15px;
+}
+
+.pad {
+    padding: 16px;
+}
+
+.title1 {
+    font-family: "QuicksandM";
+    font-size: 12px;
+    color: #666666;
+}
+
+.data1 {
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #222222;
+}
+
+.resume {
+    position: relative;
+}
+
+.apply-btn {
     position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #222222;
+    padding: 2px;
+    background-color: #3FD28B;
+    border: none;
+    width: 73px;
+    height: 28px;
+    box-shadow: 0px 3px 5px #0000003D;
+    border-radius: 2px;
+    opacity: 1;
+    cursor: pointer;
 }
 
-.cardss2 {
-    position: absolute;
+.time-preference {
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    margin-bottom: 18px;
 }
 
-.car0 {
+input[type="radio"] {
+    accent-color: green;
+}
+
+.select-time {
+    font-family: "QuicksandM";
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 18px;
+}
+
+.select {
+    margin-bottom: 20px;
+}
+
+.time-label {
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    margin-bottom: 18px;
+}
+
+input[type="checkbox"] {
     display: none;
 }
 
-.car1 {
-    display: none;
+.idr {
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    img {
+        vertical-align: bottom;
+        width: 18px;
+    }
 }
 
-.car2 {
-    display: none;
+.se {
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    img {
+        vertical-align: bottom;
+        width: 18px;
+    }
+}
+
+.sqe {
+    font-family: "QuicksandM";
+    font-size: 16px;
+    color: #222222;
+    img {
+        vertical-align: bottom;
+        width: 18px;
+    }
+}
+
+.please-line {
+    font-family: "QuicksandM";
+    font-size: 12px;
+    color: #666666;
+}
+
+.roles-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #DBEFFF;
+}
+
+.job-roles-span {
+    font-size: 16px;
+    color: #222222;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: "QuicksandM";
+    margin-top: 0;
+    padding-top: 0px;
+    height: 56px;
+}
+
+.upload {
+    height: 25px;
+    position: relative;
+    top: 5px;
+}
+
+.resume-text {
+    display: inline-block;
+    color: #3FD28B;
+    margin-top: 20px;
+    margin-left: 2px;
+    font-family: QuickSandM;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.arr-img {
+    padding: 13px 13px;
+}
+
+.displayRoles {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    grid-column: 2/3;
 }
