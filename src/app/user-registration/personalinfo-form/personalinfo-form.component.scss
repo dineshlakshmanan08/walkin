@@ -116,6 +116,13 @@ input[type="number"]:focus {
     left: 80%;
 }
 
+.profile-image {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+}
+
 label,
 input {
     margin-left: 24px;

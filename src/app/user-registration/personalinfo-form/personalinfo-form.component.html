@@ -7,10 +7,13 @@
             <input type="text" name="firstname" id="" class="first-name-input" required ngModel>
 
         </div>
-        <div class="profile-pic">
-            <input type="file" name="profilepic" id="" class="profile-pic-input" accept="image/*" (change)="onImageSelected($event)">
+
+        <span class="profile-pic">
             <img *ngIf="selectedImage" [src]="selectedImage" alt="Uploaded Profile" class="profile-image">
-        </div>
+            <input type="file" name="profilepic" id="" class="profile-pic-input" accept="image/*" (change)="onImageSelected($event)">
+
+        </span>
+
         <div class="last-name label-style">
             <label for="last-name">Last Name*</label> </div>
         <div>
