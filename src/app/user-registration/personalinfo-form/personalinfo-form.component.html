@@ -8,8 +8,8 @@
 
         </div>
         <div class="profile-pic">
-            <input type="file" name="profilepic" id="" class="profile-pic-input" ngModel accept="image/*">
-
+            <input type="file" name="profilepic" id="" class="profile-pic-input" accept="image/*" (change)="onImageSelected($event)">
+            <img *ngIf="selectedImage" [src]="selectedImage" alt="Uploaded Profile" class="profile-image">
         </div>
         <div class="last-name label-style">
             <label for="last-name">Last Name*</label> </div>
@@ -31,7 +31,7 @@
 
         </div>
         <div class="resume label-style">
-            <input #uploadResume type="file" name="resume" id="" class="resume-input" ngModel accept=".pdf" hidden>
+            <input #uploadResume type="file" name="resume" id="" class="resume-input" ngModel accept=".pdf" hidden (change)="onFileSelected($event)">
 
             <img class="upload" src="../../../../assets/svg/Upload_black_24dp.svg" alt="resume-icon">
             <h6 class="resume-text" (click)="uploadResume.click()">UPLOAD UPDATED RESUME</h6>

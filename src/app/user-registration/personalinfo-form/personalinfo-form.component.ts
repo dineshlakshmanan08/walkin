@@ -10,12 +10,14 @@ import { UserDataService } from '../user-data.service';
 
 export class  PersonalinfoFormComponent {
   constructor(private router: Router,private userdataService: UserDataService) { }
-
+  selectedFile: File | undefined;
+  selectedImage: any | undefined;
   isChecked: boolean = false;
   isChecked1: boolean = false;
   isChecked2: boolean = false;
   isChecked3: boolean = false;
   isChecked4: boolean = false;
+  profile: any | undefined;
   page: number = 0;
   ngOnInit() {
 
@@ -35,17 +37,36 @@ export class  PersonalinfoFormComponent {
   toggleCheckbox4() {
     this.isChecked4 = !this.isChecked4;
   }
-
+  onFileSelected(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length) {
+      this.selectedFile = inputElement.files[0];
+      console.log(this.selectedFile)
+    }
+  }
+  onImageSelected(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length) {
+      const fileReader = new FileReader();
+      fileReader.onload = (e) => {
+        this.selectedImage = e.target?.result;
+        this.profile = this.selectedImage;
+      };
+      fileReader.readAsDataURL(inputElement.files[0]);
+      
+    }
+    
+  }
   onSubmit(form: NgForm){
     console.log(form.value)
     if(form.valid){
-     
+      console.log(this.profile)
       const email = form.value.email;
-      const profilepic = form.value.profilepic;
+      const profilepic = this.profile;
       const firstname = form.value.firstname;
       const lastname =  form.value.lastname;
       const number = form.value.number;
-      const resume =  form.value.resume;
+      const resume =  this.selectedFile;
       const portfolio = form.value.portfolio;
       const jobupdates = form.value.jobupdates;
       const referral = form.value.referral;
