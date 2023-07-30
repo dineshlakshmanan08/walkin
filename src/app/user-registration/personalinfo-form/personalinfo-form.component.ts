@@ -41,7 +41,7 @@ export class  PersonalinfoFormComponent {
     const inputElement = event.target as HTMLInputElement;
     if (inputElement.files && inputElement.files.length) {
       this.selectedFile = inputElement.files[0];
-      console.log(this.selectedFile)
+     
     }
   }
   onImageSelected(event: Event): void {
