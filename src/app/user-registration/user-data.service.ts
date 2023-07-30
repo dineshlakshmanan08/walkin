@@ -5,11 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class UserDataService {
   
-  private personalInfo: any[] = [];
-  private qualificationInfoF: any[] = [];
-  private qualificationInfoE: any[] = [];
-  private qualificationInfo: any[] = [];
+   personalInfo: any[] = [];
+
   private application: any[] = [];
+  
+   pageTwoData: any;
+  userFormData: any;
+ selectedWalkin: any;
+  
   private walkinInfo = [{
     "id": 1,
     "walkinFor": "Designer",
@@ -20,7 +23,7 @@ export class UserDataService {
     "expiry": '2023-08-5',
     "internship": "Internship Opportunity for MCA Students",
     "generalInstructions": "- We have a two&ndash;year indemnity for permanent candidates. We will provide training to the selected candidates. <br />- Candidates who have appeared for any test held by Zeus Learning in the past 12 months will not be allowed to appear for this recruitment test.",
-     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
+     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
     "systemRequirement": "- Personal Laptop or Desktop computer in working condition with good quality camera (you can use Windows 7 and above). <br />- The latest version of Google Chrome Browser only.<br /> - Please note that Internet speed should be minimum 1 Mbps. <br />- Do not use a MacBook or iPad for the proctored exam.",
     "process": "- Every round is an elimination round. Candidates need to clear all rounds to get selected. <br /><br /><br />Round I : 4th August, 2018 <br />Aptitude Test : 25 Questions <br /><br /><br />Round II (Interview) : 4th August, 2018.",
   },{
@@ -35,7 +38,7 @@ export class UserDataService {
     "expiry": '2023-09-2',
     "internship": "",
     "generalInstructions": "- We have a two&ndash;year indemnity for permanent candidates. We will provide training to the selected candidates. <br />- Candidates who have appeared for any test held by Zeus Learning in the past 12 months will not be allowed to appear for this recruitment test.",
-     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
+     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
     "systemRequirement": "- Personal Laptop or Desktop computer in working condition with good quality camera (you can use Windows 7 and above). <br />- The latest version of Google Chrome Browser only.<br /> - Please note that Internet speed should be minimum 1 Mbps. <br />- Do not use a MacBook or iPad for the proctored exam.",
     "process": "- Every round is an elimination round. Candidates need to clear all rounds to get selected. <br /><br /><br />Round I : 4th August, 2018 <br />Aptitude Test : 25 Questions <br /><br /><br />Round II (Interview) : 4th August, 2018.",
  
@@ -55,7 +58,7 @@ export class UserDataService {
     "expiry": '2023-08-15',
     "internship": "",
     "generalInstructions": "- We have a two&ndash;year indemnity for permanent candidates. We will provide training to the selected candidates. <br />- Candidates who have appeared for any test held by Zeus Learning in the past 12 months will not be allowed to appear for this recruitment test.",
-     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
+     "instructions": "- Candidates are requested to log in half an hour prior to the exam start time as they would need to capture their image using a web camera. By taking this test, you are permitting the examination system to capture your video for invigilation purposes.<br /> - Candidates would not be able to appear for the exam if the web camera attached to their system is not functional.<br /> - The web camera of your system must be enabled and must remain switched on throughout the examination. In the event of non-receipt of a webcam, your examination will be considered null and void. <br />- Candidate&rsquo;s audio and video will be recorded during the examination and will also be monitored by a live proctor. The proctor may terminate your exam in case he/she observes any malpractice during the exam. <br />- Candidates are advised to use their own Laptop/PC with a stable internet connection (min 1 Mbps) during the exam. <br />- Candidates cannot use an iOS system/device for this exam.",
     "systemRequirement": "- Personal Laptop or Desktop computer in working condition with good quality camera (you can use Windows 7 and above). <br />- The latest version of Google Chrome Browser only.<br /> - Please note that Internet speed should be minimum 1 Mbps. <br />- Do not use a MacBook or iPad for the proctored exam.",
     "process": "- Every round is an elimination round. Candidates need to clear all rounds to get selected. <br /><br /><br />Round I : 4th August, 2018 <br />Aptitude Test : 25 Questions <br /><br /><br />Round II (Interview) : 4th August, 2018.",
     
@@ -64,6 +67,10 @@ export class UserDataService {
 
 
 ]
+createUser(){
+  
+
+}
 getApplication(){
   return this.application;
 }
@@ -82,22 +89,4 @@ getWalkinInfo(){
     return this.personalInfo;
   }
 
-  setQualificationDataF(newData: any) {
-    this.qualificationInfoF.push(newData);
-  }
-  getQualificationDataF() {
-    return this.qualificationInfoF;
-  }
-  setQualificationDataE(newData: any) {
-    this.qualificationInfoE.push(newData);
-  }
-  getQualificationDataE() {
-    return this.qualificationInfoE;
-  }
-  setQualificationData(newData: any) {
-    this.qualificationInfo.push(newData);
-  }
-  getQualificationData() {
-    return this.qualificationInfo;
-  }
 }

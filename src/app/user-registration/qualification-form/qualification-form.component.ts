@@ -1,95 +1,174 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+
+import { Component,ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserDataService } from '../user-data.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-qualification-form',
   templateUrl: './qualification-form.component.html',
   styleUrls: ['./qualification-form.component.scss']
 })
-export class  QualificationFormComponent{
-  toggleCheck: boolean = true;
-  toggleCheck2: boolean = true;
-  selectedOption: string = 'fresher'; 
-  inputValue: string = "";
-  constructor(private router: Router,private userdataService: UserDataService) { }
-  ngOnInit(): void {
-    console.log(this.userdataService.getData())
- }
-  toggleForm(){
-    
-    this.toggleCheck = !this.toggleCheck;
-  }
-  toggleForm2(){
-    this.toggleCheck2 = !this.toggleCheck2;
-  }
+
+export class QualificationFormComponent {
  
 
-  onRadioChange(event: any) {
-    this.selectedOption = event.target.value;
-  }
+  @ViewChild('datePicker') datePicker: any; 
 
-changeTech(){
-  const c = this.inputValue;
-}
-  onSubmit(form: NgForm){
-    console.log(form)
-    if(form){
-     
-      const aggregate = form.value.aggregate;
-      const passingyear = form.value.passingyear;
-      const qualification = form.value.qualification;
-      const stream =  form.value.stream;
-      const college = form.value.college;
-      const othercollege =  form.value.othercollege;
-      const locations = form.value.location;
-      
-      const exp = form.value.exp;
-      const Javascript = form.value.Javascript;
-      const Angular = form.value.Angular;
-      const React = form.value.React;
-      const Nodejs = form.value.Nodejs;
-      const Others = form.value.Others;
-      const othertech = form.value.othertech;
-      const bgcheck = form.value.bgcheck;
-      const role = form.value.role;
+  pageTwoForm: any;
+  passYears = [
+    { label: '2023', value: '2023' },
+    { label: '2022', value: '2022' },
+    { label: '2021', value: '2021' },
+    { label: '2020', value: '2020' }
+  ];
+  qualifications = [
+    { label: 'Bachelor in Technology [B.Tech]', value: 'Bachelor in Technology [B.Tech]' },
+    { label: 'Bachelor in Science [BSc]', value: 'Bachelor in Science [BSc]' },
+    { label: 'MCA', value: 'MCA' },
+    { label: 'Bachelor in Science [BCA]', value: 'Bachelor in Computer Application [BCA]' },
+    { label: 'Bachelor in Science [M.TECH]', value: 'Master in Technology [M.TECH]' },
+  ];
+  streams = [
+    { label: 'Information Technology', value: 'Information Technology' },
+    { label: 'Computer Engineering', value: 'Computer Engineering' },
+    { label: 'EXTC', value: 'EXTC' },
+    { label: 'MECHANICAL ENGINEERING', value: 'Mechanical Engineering' },
+    { label: 'Instrumentation Engineering', value: 'Instrumentation Engineering' },
+  ];
+  colleges = [
+    { label: 'VCET', value: 'VCET' },
+    { label: 'TCET', value: 'TCET' },
+    { label: 'BITS', value: 'BITS' },
+    { label: 'IITB', value: 'IITB' },
+    { label: 'Other', value: 'Other' }
+  ];
 
-      const yoe =  form.value.yoe;
-      const ctc = form.value.ctc;
-      const pnumber =  form.value.pnumber;
+  techs = [
+    { label: 'Javascript', value: 'Javascript' },
+    { label: 'Angular JS', value: 'Angular JS' },
+    { label: 'React', value: 'React' },
+    { label: 'Node JS', value: 'Node JS' },
+    { label: 'Others', value: 'Others' }
+  ];
 
-      const Javascripte = form.value.Javascripte;
-      const Angulare = form.value.Angulare;
-      const Reacte = form.value.Reacte;
-      const Nodejse = form.value.Nodejse;
-      const Otherse = form.value.Otherse;
-      const otherteche = form.value.otherteche;
-      
-      const Javascriptf = form.value.Javascriptf;
-      const Angularf = form.value.Angularf;
-      const Reactf = form.value.Reactf;
-      const Nodejsf = form.value.Nodejsf;
-      const Othersf = form.value.Othersf;
-      const othertechf = form.value.othertechf;
-
-      const bgchecke = form.value.bgchecke;
-      const date = form.value.date;
-      const noticeperiod = form.value.noticeperiod;
-      const bgcheckf = form.value.bgcheckf;
-      const rolef = form.value.rolef;
-
-      console.log(form)
-      this.userdataService.setQualificationDataF({exp,Javascript,Angular,React,Nodejs,Others,othertech,bgcheck,role})
-      this.userdataService.setQualificationData({aggregate,passingyear,qualification,stream,college,othercollege,locations})
-      this.userdataService.setQualificationDataE({yoe,ctc,pnumber,Javascripte,Angulare,Reacte,Nodejse,Otherse,otherteche,Javascriptf,Angularf,Reactf,Nodejsf,Othersf,othertechf,bgchecke,date,noticeperiod,bgcheckf,rolef
-      })
-      
-      this.router.navigate(['/registration/','review']);
-      // this.router.navigate(['/qualification/']);
-      
-    }else{
-      alert("Wrong user credentials")
-    }
-  }
+  months = [
+    { label: '1 Month', value: '1 Month' },
+    { label: '2 Month', value: '2 Month' },
+    { label: '3 Month', value: '3 Month' }
+  ];
   
+
+  constructor(private fb: FormBuilder, private formDataService: UserDataService,private router: Router){
+    this.pageTwoForm=fb.group({
+      percentage:['',Validators.required],
+      otherclg: [''],
+      clglocation: ['',Validators.required],
+      passingYear: ['',Validators.required],
+      selectedQualification: ['',Validators.required],
+      selectedStream: ['',Validators.required],
+      selectedCollege: ['',Validators.required],
+      experienceType: ['Fresher',Validators.required],
+      expYears: [''],
+      currentCTC: [''],
+      expectedCTC: [''],
+      expertiseTech: fb.array([]),
+      familarTech: fb.array([]),
+      otherExpertiseTech: [''],
+      otherFamilarTech: [''],
+      isNoticePeriod: [''],
+      selectNoticeDate: [null],
+      noticeMonth: [''],
+      isAppeared: ['',Validators.required],
+      previousAppliedRole: ['']
+    })
+
+    this.pageTwoForm.setValidators(this.customFormValidator);
+    this.pageTwoForm.updateValueAndValidity(); // Trigger validation after setting the validator
+
+
+    this.pageTwoForm.get('selectedCollege')?.valueChanges.subscribe((selectedValue: string) => {
+      if (selectedValue === 'Other') {
+        this.pageTwoForm.get('otherclg')?.enable(); // Enable the otherCollege input
+      } else {
+        this.pageTwoForm.get('otherclg')?.disable(); // Disable the otherCollege input
+      }
+    });
+  }
+
+  customFormValidator(formGroup: FormGroup) {
+    const experienceValue = formGroup.get('experienceType')?.value;
+    const expYearsValue = formGroup.get('expYears')?.value;
+    const currentCTCValue = formGroup.get('currentCTC')?.value;
+    const expectedCTCValue = formGroup.get('expectedCTC')?.value;
+    const expertiseTechValue = formGroup.get('expertiseTech')?.value;
+    const isNoticePeriodValue = formGroup.get('isNoticePeriod')?.value;
+    const selectNoticeDateValue = formGroup.get('selectNoticeDate')?.value;
+    const noticeMonthValue = formGroup.get('noticeMonth')?.value;
+
+    if (experienceValue === 'Experienced') {
+      if (!expYearsValue || !currentCTCValue || !expectedCTCValue || expertiseTechValue.length===0 || !isNoticePeriodValue || (isNoticePeriodValue=="Yes"  && !selectNoticeDateValue) || (isNoticePeriodValue=="Yes" && !noticeMonthValue)) {
+        return { requiredFields: true };
+      }
+    }
+    return null;
+  }
+
+  get fc(){
+    return this.pageTwoForm.controls;
+  }
+
+  isOtherCollegeDisabled() {
+    return this.pageTwoForm.get('selectedCollege').value !== 'Other';
+  }
+  checkNoticePeriod(){
+    console.log( this.pageTwoForm.get('isNoticePeriod').value)
+    return this.pageTwoForm.get('isNoticePeriod').value !== 'Yes';
+  }
+
+
+  get expertiseTechArray() {
+    return this.pageTwoForm.get('expertiseTech') as FormArray;
+  }
+
+  get familarTechArray(){
+    return this.pageTwoForm.get('familarTech') as FormArray;
+  }
+
+  getExpertControl(value: string): FormControl {
+    return this.fb.control(this.expertiseTechArray.value.includes(value));
+  }
+  getFamilarControl(value: string): FormControl {
+    return this.fb.control(this.familarTechArray.value.includes(value));
+  }
+
+  onExpertChange(value: string, event: any) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      this.expertiseTechArray.push(this.fb.control(value));
+    } else {
+      const index = this.expertiseTechArray.value.findIndex((role: string) => role === value);
+      this.expertiseTechArray.removeAt(index);
+    }
+    
+  }
+  onFamilarChange(value: string, event: any) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      this.familarTechArray.push(this.fb.control(value));
+    } else {
+      const index = this.familarTechArray.value.findIndex((role: string) => role === value);
+      this.familarTechArray.removeAt(index);
+    }
+    
+  }
+
+  nextButton(){
+    
+    this.formDataService.pageTwoData=this.pageTwoForm.value;
+    console.log(this.formDataService.pageTwoData)
+    this.router.navigate(['/registration/','review']);
+  }
+
 }

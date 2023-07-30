@@ -8,7 +8,7 @@
 
         </div>
         <div class="profile-pic">
-            <input type="file" name="profilepic" id="" class="profile-pic-input" ngModel>
+            <input type="file" name="profilepic" id="" class="profile-pic-input" ngModel accept="image/*">
 
         </div>
         <div class="last-name label-style">
@@ -31,9 +31,13 @@
 
         </div>
         <div class="resume label-style">
-            <label for="number">UPLOAD RESUME</label></div>
-        <div> <input type="file" name="resume" id="" class="resume-input" ngModel>
+            <input #uploadResume type="file" name="resume" id="" class="resume-input" ngModel accept=".pdf" hidden>
+
+            <img class="upload" src="../../../../assets/svg/Upload_black_24dp.svg" alt="resume-icon">
+            <h6 class="resume-text" (click)="uploadResume.click()">UPLOAD UPDATED RESUME</h6>
         </div>
+
+
         <div class="portfolio label-style">
             <label for="portfolio">Enter Portfolio url (if any)</label></div>
         <div>
@@ -79,7 +83,7 @@
             <label for="referral ">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
         </div>
         <div>
-            <input type="text" name="referral " id=" " class="referral-input " ngModel>
+            <input type="text" name="referral" id=" " class="referral-input " ngModel>
         </div>
 
         <div class="job-updates">

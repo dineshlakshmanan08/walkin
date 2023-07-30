@@ -35,8 +35,9 @@ export class  PersonalinfoFormComponent {
   toggleCheckbox4() {
     this.isChecked4 = !this.isChecked4;
   }
+
   onSubmit(form: NgForm){
-    console.log(form)
+    console.log(form.value)
     if(form.valid){
      
       const email = form.value.email;
@@ -62,6 +63,7 @@ export class  PersonalinfoFormComponent {
       alert("Wrong user credentials")
     }
   }
+ 
 }
 
 

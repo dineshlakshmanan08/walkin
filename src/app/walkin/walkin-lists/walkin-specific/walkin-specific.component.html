@@ -7,7 +7,7 @@
 
         </div>
         <button type="click" class="apply-btn" (click)="formData()">APPLY</button>
-        <!-- <div [innerHTML]="dataById.generalInstructions"></div> -->
+
         <div class="date-time">
             Date and time:
         </div>
@@ -17,7 +17,7 @@
             <span><img src="../../../../assets/svg/location_on_black_24dp.svg" alt="" class="loc-img"></span>
             <span class="location">{{dataById.location}}</span>
             </span>
-            <!-- <div [innerHTML]="dataById.process"></div> -->
+
         </div>
         <div class="move">
             <hr>
@@ -93,8 +93,7 @@
                             <input type="checkbox" value="id"  formControlName="role1">
                               <img [src]="isChecked1 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
                               Instructional Designer</label>
-                        <!-- <input type="checkbox"  value="instructional_designer" ngModel>
-                        <span for="instructional_designer">Instructional Designer</span> -->
+
                     </div>
 
                     <div class="se">
@@ -103,16 +102,14 @@
                               <img [src]="isChecked2 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
                               Software Engineer</label>
 
-                        <!-- <input type="checkbox" name="softwareengineer" value="software_engineer" ngModel>
-                        <span for="software_engineer">Software Engineer</span> -->
+
                     </div>
                     <div class="sqe">
                         <label for="remember-me" (click)="toggleCheckbox3() " class="remember-me-label">
                             <input type="checkbox" value="sqe"   formControlName="role3">
                               <img [src]="isChecked3 ? '../../../assets/svg/checkbox-checked.svg' : '../../../assets/svg/checkbox-unchecked.svg' " alt="Checkbox Image " class="checkboxPosition ">
                               Software Quality Engineer</label>
-                        <!-- <input type="checkbox" name="softwarequalityengineer" value="software_quality_engineer" ngModel>
-                        <span for="software_quality_engineer">Software Quality Engineer</span> -->
+
                     </div>
 
 
@@ -145,3 +142,4 @@
 
     </div>
 </div>
+<div class="space"></div>

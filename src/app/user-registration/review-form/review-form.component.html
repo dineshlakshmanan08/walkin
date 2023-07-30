@@ -1,102 +1,320 @@
-<div class="first-line">
-    <span class="personal-info">Personal Information</span>
-    <span class="edit">Edit</span>
-</div>
-<div class="personal-info-form">
-    <div class="flex-container">
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="last-name-label">Last Name</div>
-        <div class="last-name">John</div>
-        <div class="email-name-label">email Name</div>
-        <div class="email-name">John@gmail.com</div>
-        <div class="phone-label">Phone no</div>
-        <div class="phone">9234234234</div>
-        <div class="first-name-label">Uploaded resume - resume.pdf</div>
+<div class="main">
 
-        <div class="portfolio-label">Enter portfolio url (if any)</div>
-        <div class="portfolio">John.com</div>
-        <div class="job-label">Preferred job-roles</div>
-        <div class="job">idr</div>
-        <div class="job">sqe</div>
-        <div class="job">se</div>
-        <div class="referral-label">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</div>
-        <div class="referral">Johnny.com</div>
-        <div class="updates">
-            <img src="../../../assets/svg/checkbox-checked.svg" alt="">
-            <span>Send me jop related updates</span>
+    <div class="heading">
+        <h6 class="heading-text">Personal Information</h6>
+        <img class="heading-img" src="" alt="">
+        <p class="edit-text">Edit</p>
+    </div>
+
+    <div class="inputs">
+        <div class="form-input form-child">
+            <div class="mb-4">
+                <label for="fname" class="form-label">First Name</label>
+                <h5>{{personalInfo[0]?.firstname}}</h5>
+
+            </div>
+            <div class="mb-4">
+                <label for="lname" class="form-label">Last Name</label>
+                <h5>{{personalInfo[0]?.lastname}}</h5>
+
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <h5>{{personalInfo[0]?.email}}</h5>
+
+            </div>
+
+            <div class="mb-4">
+                <label for="phone" class="form-label">Phone Number</label>
+
+                <div>
+                    <h5>+91 {{personalInfo[0]?.number}}</h5>
+                </div>
+
+            </div>
+
+
+
+            <div class="resume mb-4">
+
+                <img class="upload" src="../../../assets/svg/Upload_black_24dp.svg" alt="">
+                <h6 class="resume-text me-3">UPLOAD RESUME</h6>
+                <h6 class="resume-text">{{personalInfo[0]?.resume}}</h6>
+
+            </div>
+
+            <div class="mb-4">
+                <label for="portfolio" class="form-label">Enter Portfolio URL (if any)</label>
+                <h5 *ngIf="personalInfo && personalInfo[0]?.portfolio==''">-</h5>
+                <h5>{{personalInfo[0]?.portfolio}}</h5>
+
+            </div>
+
+            <div class="mb-4">
+                <label for="preferredRole" class="form-label">Preferred Job Roles</label>
+                <div *ngIf="personalInfo">
+                    <div class="check" *ngIf="personalInfo[0]?.softwareengineer">
+                        <h5>Software Engineer</h5>
+                    </div>
+                    <div class="check" *ngIf="personalInfo[0]?.instructionaldesigner">
+                        <h5>Instructional designer</h5>
+                    </div>
+                    <div class="check" *ngIf="personalInfo[0]?.softwarequalityengineer">
+                        <h5>Software Quality Engineer</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+                <label for="referral" class="form-label">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
+                <h5 *ngIf="personalInfo && personalInfo[0]?.referral=='' ">-</h5>
+                <h5>{{personalInfo[0]?.referral}}</h5>
+            </div>
+
+            <div class="check mb-4">
+                <img *ngIf="personalInfo && personalInfo[0]?.jobupdates" src="../../../assets/svg/checkbox-checked.svg" alt="">
+                <img *ngIf="!personalInfo[0]?.jobupdates" src="../../../assets/svg/checkbox-unchecked.svg" alt="">
+                <label class="remember" for="rem">Send me job related updates via mail</label>
+            </div>
+
+
+        </div>
+
+        <div class="form-profile form-child">
+            <img *ngIf="!personalInfo" class="profile-pic" src="" alt="empty-img">
+            <img *ngIf="personalInfo" [src]="personalInfo[0]?.profilepic" alt="Uploaded Profile" class="profile-image">
+            <h6 class="upload-text">UPLOAD DISPLAY PICTURE</h6>
+            <p class="pic-msg">Max. image size: 5MB</p>
         </div>
     </div>
-    <div class="pic">
-        <img src="../../../assets/svg/Zeus-LMS-logo.svg" alt="">
+
+    <div class="heading">
+        <h6 class="heading-text">Qualifications</h6>
+        <img class="heading-img" src="" alt="">
+        <p class="edit-text">Edit</p>
     </div>
 
-</div>
-<div class="second-line">
-    <span class="qualification-info">Personal Information</span>
-    <span class="edit-btn">Edit</span>
-</div>
-<div class="outer-qualification">
-    <h4>Educational qualification</h4>
-    <div class="inner-qualification">
-        <div class="agg-label">Aggregate percentage</div>
-        <div class="agg">65%</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div>
-            <div class="first-name-label">First Name</div>
-            <div class="first-name">John</div>
-            <div class="first-name-label">First Name</div>
-            <div class="first-name">John</div>
+
+
+    <div class="qualification">
+        <div class="qualification-header">
+            <h6 class="education-title">Educational Qualifications</h6>
+
         </div>
-        <div>
-            <div class="first-name-label">First Name</div>
-            <div class="first-name">John</div>
-            <div class="first-name-label">First Name</div>
-            <div class="first-name">John</div>
+        <div class="qualification-detail">
+            <div class="first-details">
+                <div class="left-content">
+                    <div class="half-content">
+                        <div class="half1">
+                            <div class="mb-4">
+                                <label for="percentage" class="form-label">Aggregate Percentage</label>
+                                <h5>{{pageTwoData?.percentage}}</h5>
+                            </div>
+                            <div class="mb-4">
+                                <label for="passYear" class="form-label">Passing Year</label>
+                                <h5>{{pageTwoData?.passingYear}}</h5>
+
+                            </div>
+                        </div>
+                        <div class="half2"></div>
+                    </div>
+
+                </div>
+                <div class="right-content"></div>
+            </div>
+            <div class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="qualification" class="form-label">Qualification</label>
+                        <h5>{{pageTwoData?.selectedQualification}}</h5>
+
+                    </div>
+
+                </div>
+                <div class="right-side">
+                    <div class="mb-4">
+                        <label for="stream" class="form-label">Stream</label>
+                        <h5>{{pageTwoData?.selectedStream}}</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="college" class="form-label">College</label>
+                        <h5>{{pageTwoData?.selectedCollege}}</h5>
+
+                    </div>
+
+                </div>
+                <div class="right-side">
+                    <div class="mb-4">
+                        <label for="otherclg" class="form-label">If others, please enter your college name</label>
+                        <h5 *ngIf="pageTwoData && pageTwoData.selectedCollege!='Other'">-</h5>
+                        <h5>{{pageTwoData?.otherclg}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="first-details">
+                <div class="left-content">
+                    <div class="half-content">
+                        <div class="half1">
+                            <div class="mb-4">
+                                <label for="clglocation" class="form-label">Where is your College Located?</label>
+                                <h5>{{pageTwoData?.clglocation}}</h5>
+                            </div>
+                        </div>
+                        <div class="half2"></div>
+                    </div>
+
+                </div>
+                <div class="right-content"></div>
+            </div>
         </div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
 
     </div>
 
 
-</div>
-<div class="outer-personal">
-    <h4 class="m">Personal qualification</h4>
-    <div class="inner-qualification-personal">
-        <div class="agg-label">Aggregate percentage</div>
-        <div class="agg">65%</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
+    <div class="qualification">
+        <div class="qualification-header">
+            <h6 class="education-title">Professional Qualifications</h6>
 
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
+        </div>
 
+        <div class="qualification-detail">
+            <label for="experienceType" class="form-label">Applicant Type</label>
+            <h5>{{pageTwoData?.experienceType}}</h5>
 
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
-        <div class="first-name-label">First Name</div>
-        <div class="first-name">John</div>
+        </div>
 
     </div>
 
 
+    <div class="qualification">
+        <div class="qualification-detail">
+            <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="first-details">
+                <div class="left-content">
+                    <div class="half-content">
+                        <div class="half1">
+                            <div class="mb-4">
+                                <label for="expYears" class="form-label">Years of Experience</label>
+                                <h5>{{pageTwoData?.expYears}}</h5>
+                            </div>
+                            <div class="mb-4">
+                                <label for="currentCTC" class="form-label">Current CTC (In Rupees)</label>
+                                <h5>{{pageTwoData?.currentCTC}}</h5>
+                            </div>
+                            <div class="mb-4">
+                                <label for="expectedCTC" class="form-label">Expected CTC (In Rupees)</label>
+                                <h5>{{pageTwoData?.expectedCTC}}</h5>
+                            </div>
+
+                        </div>
+                        <div class="half2"></div>
+                    </div>
+                </div>
+                <div class="right-content"></div>
+            </div>
+            <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="preferredRole" class="form-label">Select All The Technologies You Expertise In</label>
+
+                        <div class="check" *ngFor="let tech of pageTwoData?.expertiseTech">
+                            <h5>{{tech}}</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="otherExpertiseTech" class="form-label">If others, please mention</label>
+                        <h5>{{pageTwoData?.otherExpertiseTech}}</h5>
+                    </div>
+                </div>
+                <div class="right-side"></div>
+            </div>
+
+            <div class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="preferredRole" class="form-label">Select All The Technologies You Are Familiar In</label>
+                        <h5 *ngIf="pageTwoData && pageTwoData.familarTech.length===0">-</h5>
+                        <div class="check" *ngFor="let tech of pageTwoData?.familarTech">
+                            <h5>{{tech}}</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="otherFamilarTech" class="form-label">If others, please mention</label>
+                        <h5 *ngIf="pageTwoData && pageTwoData.otherFamilarTech==''">-</h5>
+                        <h5>{{pageTwoData?.otherFamilarTech}}</h5>
+                    </div>
+                </div>
+                <div class="right-side"></div>
+            </div>
+
+            <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2 mb-3">
+                <div class="left-side">
+                    <label for="isNoticePeriod" class="form-label">Are you currently on notice period?</label>
+                    <h5>{{pageTwoData?.isNoticePeriod}}</h5>
+
+                </div>
+                <div class="right-side"></div>
+            </div>
+
+            <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="selectNoticeDate" class="form-label">If Yes, when will your notice period end?</label>
+                        <h5>{{pageTwoData?.selectNoticeDate}}</h5>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="mb-4">
+                        <label for="noticeMonth" class="form-label">How long is your notice period? (Mention in months)</label>
+                        <h5>{{pageTwoData?.noticeMonth}}</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="education2 mb-3">
+                <div class="left-side">
+                    <label for="isAppeared" class="form-label">Have You Appeared For Any Test By Zeus in the past 12 months?</label>
+                    <h5>{{pageTwoData?.isAppeared}}</h5>
+
+                </div>
+                <div class="right-side"></div>
+            </div>
+
+            <div class="education2">
+                <div class="left-side">
+                    <div class="mb-4">
+                        <label for="previousAppliedRole" class="form-label">If Yes, which role did you apply for?</label>
+                        <h5 *ngIf="pageTwoData && pageTwoData.isAppeared=='No'">-</h5>
+                        <h5>{{pageTwoData?.previousAppliedRole}}</h5>
+                    </div>
+                </div>
+                <div class="right-side"></div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="button-container">
+        <button type="button" [routerLink]="['/registration/qualification']" class="btn text-dark shadow">PREVIOUS</button>
+
+    </div>
 </div>

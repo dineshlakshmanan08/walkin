@@ -9,6 +9,7 @@ import { QualificationFormComponent } from './qualification-form/qualification-f
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { FormsModule } from '@angular/forms'; 
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [ UserRegistrationComponent,
     RegistrationNavbarComponent,
@@ -18,7 +19,7 @@ import { RouterModule } from '@angular/router';
     QualificationFormComponent,
     ReviewFormComponent,],
   imports: [
-    CommonModule, FormsModule,RouterModule
+    CommonModule, FormsModule,RouterModule,ReactiveFormsModule
    
   ],
   exports: [

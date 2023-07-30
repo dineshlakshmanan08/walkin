@@ -72,3 +72,18 @@
     opacity: 0.6;
     border-radius: 2px;
 }
+
+.create-btn.active {
+    margin-right: 16px;
+    min-width: 90px;
+    min-height: 28px;
+    border: none;
+    font-family: "QuicksandM";
+    font-size: 14px;
+    color: #1F2834;
+    cursor: pointer;
+    pointer-events: all;
+    background: #3FD28B 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 2px;
+}

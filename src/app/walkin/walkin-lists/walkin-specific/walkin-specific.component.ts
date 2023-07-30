@@ -41,6 +41,7 @@ export class WalkinSpecificComponent implements OnInit {
       
     }
   }
+  
 // form submission
    formData(): void {
     if (this.myForm.valid) {

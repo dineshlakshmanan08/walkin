@@ -1,13 +1,14 @@
 <div class="subnav">
     <div class="flex-container">
-        <div class="back-btn">
+        <div class="back-btn" (click)="goBack()">
+
         </div>
         <div class="create-txt">
             Create An Account
         </div>
         <div class="buttons">
-            <button class="cancel-btn">CANCEL</button>
-            <button class="create-btn" disabled>CREATE</button>
+            <button class="cancel-btn" (click)="goHome()">CANCEL</button>
+            <button class="create-btn" [ngClass]="{ active: isLinkActive('/registration/review') }" (click)="submit()">CREATE</button>
         </div>
     </div>
 </div>

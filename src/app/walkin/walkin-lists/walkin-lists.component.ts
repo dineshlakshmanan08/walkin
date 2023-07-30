@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './walkin-lists.component.html',
   styleUrls: ['./walkin-lists.component.scss']
 })
-export class WalkinListsComponent implements OnInit,AfterViewInit {
+export class WalkinListsComponent implements OnInit {
   datas: any = [];
   roles: any;
   checkExpiry: boolean = false;
@@ -20,7 +20,7 @@ export class WalkinListsComponent implements OnInit,AfterViewInit {
   constructor(private router: Router,private userdataService: UserDataService) { }
 
   ngOnInit(){
-    
+    //fetch walkin info
    
     this.datas = this.userdataService.getWalkinInfo()
     
@@ -28,21 +28,18 @@ export class WalkinListsComponent implements OnInit,AfterViewInit {
     
    
   }
-  ngAfterViewInit(): void {
-    // Call the function you want to run when the element is rendered
-   
-  }
+
+  //check for expiry date
   isExpired(dateDb: string): boolean {
     const today = new Date();
 
     
     const dbDate = new Date(dateDb);
-    console.log(dbDate)
+   
    
     const timeDifferenceInMilliseconds = dbDate.getTime() - today.getTime();
     this.differenceInDays = Math.ceil(timeDifferenceInMilliseconds / (1000 * 60 * 60 * 24));
-    console.log('run')
-    console.log(this.differenceInDays)
+  
     this.expiryDay = this.differenceInDays;
     if(this.differenceInDays > 0) {
       return false;
