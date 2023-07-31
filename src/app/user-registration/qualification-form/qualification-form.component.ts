@@ -85,14 +85,14 @@ export class QualificationFormComponent {
     })
 
     this.pageTwoForm.setValidators(this.customFormValidator);
-    this.pageTwoForm.updateValueAndValidity(); // Trigger validation after setting the validator
+    this.pageTwoForm.updateValueAndValidity(); 
 
 
     this.pageTwoForm.get('selectedCollege')?.valueChanges.subscribe((selectedValue: string) => {
       if (selectedValue === 'Other') {
-        this.pageTwoForm.get('otherclg')?.enable(); // Enable the otherCollege input
+        this.pageTwoForm.get('otherclg')?.enable(); 
       } else {
-        this.pageTwoForm.get('otherclg')?.disable(); // Disable the otherCollege input
+        this.pageTwoForm.get('otherclg')?.disable(); 
       }
     });
   }
@@ -123,7 +123,6 @@ export class QualificationFormComponent {
     return this.pageTwoForm.get('selectedCollege').value !== 'Other';
   }
   checkNoticePeriod(){
-    console.log( this.pageTwoForm.get('isNoticePeriod').value)
     return this.pageTwoForm.get('isNoticePeriod').value !== 'Yes';
   }
 
